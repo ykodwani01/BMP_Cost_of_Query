@@ -48,7 +48,7 @@ def main(connection,query):
     
     
     query_plan = get_query_plan(connection,query)
-    relation_names = extract_relation_names(query_plan)
+    relation_names = list(extract_relation_names(query_plan))
     
 
     avg_row_length = []

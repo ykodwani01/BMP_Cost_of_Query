@@ -13,7 +13,7 @@ def runner():
     connection = connect(config)
     files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
     for file_name in files:
-        file_path = os.path.join(folder_path, files[0])
+        file_path = os.path.join(folder_path,file_name)
         with open(file_path, 'r') as file:
                 query_text = file.read()
                 
