@@ -26,7 +26,7 @@ def extract_relation_names_from_plan(plan, relation_names):
 def get_query_plan(connection, query):
     
     with connection.cursor() as cursor:
-        cursor.execute("EXPLAIN (FORMAT JSON) " + query)
+        cursor.execute("EXPLAIN (FORMAT JSON,ANALYSE) " + query)
         query_plan = cursor.fetchone()[0]
         return query_plan
 
