@@ -1,5 +1,3 @@
-
-
 select
 	c_name,
 	c_custkey,
@@ -19,7 +17,7 @@ where
 			lineitem
 		group by
 			l_orderkey having
-				sum(l_quantity) > 312
+				sum(l_quantity) > 314
 	)
 	and c_custkey = o_custkey
 	and o_orderkey = l_orderkey
@@ -32,6 +30,4 @@ group by
 order by
 	o_totalprice desc,
 	o_orderdate
-LIMIT 100;-- using 1712139563 as a seed to the RNG
-
-
+LIMIT 100;

@@ -1,5 +1,3 @@
-
-
 select
 	ps_partkey,
 	sum(ps_supplycost * ps_availqty) as value
@@ -10,7 +8,7 @@ from
 where
 	ps_suppkey = s_suppkey
 	and s_nationkey = n_nationkey
-	and n_name = 'EGYPT'
+	and n_name = 'GERMANY'
 group by
 	ps_partkey having
 		sum(ps_supplycost * ps_availqty) > (
@@ -23,10 +21,8 @@ group by
 			where
 				ps_suppkey = s_suppkey
 				and s_nationkey = n_nationkey
-				and n_name = 'EGYPT'
+				and n_name = 'GERMANY'
 		)
 order by
 	value desc
-LIMIT 1;-- using 1712139563 as a seed to the RNG
-
-
+LIMIT 1;

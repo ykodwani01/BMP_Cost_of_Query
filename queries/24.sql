@@ -4,8 +4,8 @@ select
 from
 	orders
 where
-	o_orderdate >= date '1994-01-01'
-	and o_orderdate < date '1994-01-01' + interval '3' month
+	o_orderdate >= date '1995-06-01'
+	and o_orderdate < date '1995-06-01' + interval '3' month
 	and exists (
 		select
 			*
@@ -20,5 +20,3 @@ group by
 order by
 	o_orderpriority
 LIMIT 1;
-
-
